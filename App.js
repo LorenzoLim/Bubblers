@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
+import { Alert, AppRegistry, Button, StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
 export default class App extends React.Component {
   _onPressButton() {
@@ -9,29 +9,16 @@ export default class App extends React.Component {
   render() {
     return (
         <View style={styles.container}>
-        <View style={styles.buttonContainer}>
-          <Button
-            onPress={this._onPressButton}
-            title="Begin >"
-          />
+        <View>
+          <Text style={styles.title}>Bubblers</Text>
         </View>
-        <View style={styles.buttonContainer}>
-          <Button
-            onPress={this._onPressButton}
-            title="Press Me"
-            color="#841584"
-          />
-        </View>
-        <View style={styles.alternativeLayoutButtonContainer}>
-          <Button
-            onPress={this._onPressButton}
-            title="This looks great!"
-          />
-          <Button
-            onPress={this._onPressButton}
-            title="OK!"
-            color="#841584"
-          />
+        <View>
+          <TouchableOpacity
+             style={styles.button}
+             onPress={this._onPressButton}
+           >
+             <Text style={styles.buttonText}> Begin > </Text>
+           </TouchableOpacity>
         </View>
       </View>
     );
@@ -42,6 +29,25 @@ const styles = StyleSheet.create({
   container: {
    flex: 1,
    justifyContent: 'center',
+   backgroundColor: '#2c9c91',
+  },
+  title: {
+    fontSize: 80,
+    color: 'lightblue',
+    textAlign: 'center',
+    marginBottom: 400,
+  },
+  button: {
+    backgroundColor: 'lightblue',
+    padding: 20,
+    marginLeft: 50,
+    marginRight: 50,
+    alignItems: 'center',
+    borderRadius: 20,
+  },
+  buttonText: {
+    fontSize: 30,
+    color: 'white',
   },
   buttonContainer: {
     margin: 20
